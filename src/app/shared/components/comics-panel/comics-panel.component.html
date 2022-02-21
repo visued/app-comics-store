@@ -1,0 +1,93 @@
+<div class="left">
+  <dx-list
+    class="list"
+    [dataSource]="data"
+    [searchEnabled]="true"
+    selectionMode="single"
+    (onSelectionChanged)="listSelectionChanged($event)"
+  >
+    <div *dxTemplate="let item of 'item'">
+      <div class="comic">
+        <img
+          class="comic-img"
+          [src]="item.thumbnail.path + '.' + item.thumbnail.extension"
+          alt=""
+        />
+        <div class="name">
+          <div>{{ item.title }}</div>
+          <div class="creators-name" *ngIf="item.creators.items.length > 0">
+            <p
+              *ngFor="
+                let creator of item.creators.items;
+                let i = index;
+                let last = last
+              "
+            >
+              <span *ngIf="i <= 1">
+                {{ creator.name }}<ng-container *ngIf="!last">,</ng-container>
+              </span>
+            </p>
+          </div>
+        </div>
+        <div class="price-container">
+          <div class="price">
+            {{ item.prices[0].price | currency: "USD":"symbol":"1.0-0" }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *dxTemplate="let item of 'group'">
+      <div class="city">{{ item.key }}</div>
+    </div>
+  </dx-list>
+</div>
+
+<div class="right" *ngIf="currentComic != null">
+  <div class="container-detail">
+    <div class="name">{{ currentComic.title }}</div>
+    <div class="container-description">
+      <img
+        class="img-detail"
+        [src]="
+          currentComic.thumbnail.path + '.' + currentComic.thumbnail.extension
+        "
+        alt=""
+      />
+      <div class="item-detail">{{ currentComic.description }}</div>
+    </div>
+    <div class="creators-name" *ngIf="currentComic.creators.items.length > 0">
+      <p><strong>Creators: </strong></p>
+      <p
+        *ngFor="
+          let creator of currentComic.creators.items;
+          let i = index;
+          let last = last
+        "
+      >
+        <span *ngIf="i <= 1">
+          {{ creator.name }}<ng-container *ngIf="!last">,</ng-container>
+        </span>
+      </p>
+    </div>
+    <div class="price-container">
+      <div class="price">
+        {{ currentComic.prices[0].price | currency: "USD":"symbol":"1.0-0" }}
+      </div>
+    </div>
+    <dx-form id="form" [formData]="">
+      <dxi-item dataField="CUPOM"></dxi-item>
+    </dx-form>
+    <dx-button
+      stylingMode="contained"
+      text="Contained"
+      type="default"
+      [width]="300"
+      (onClick)="addToCart(currentComic)"
+    >
+      Adicionar no carrinho
+    </dx-button>
+  </div>
+</div>
+
+<dx-toast [(visible)]="isVisible" [type]="type" [message]="message">
+</dx-toast>

@@ -1,0 +1,58 @@
+<h2 class="content-block">Meu carrinho</h2>
+
+<dx-data-grid class="dx-card wide-card"
+  [dataSource]="dataSource"
+  [showBorders]="false"
+  [focusedRowEnabled]="true"
+  [focusedRowIndex]="0"
+  [columnHidingEnabled]="true">
+
+  <dxo-paging [pageSize]="10"></dxo-paging>
+  <dxo-pager [showPageSizeSelector]="true" [showInfo]="true"></dxo-pager>
+  <dxo-filter-row [visible]="true"></dxo-filter-row>
+  <dxo-editing
+    mode="row"
+    [allowDeleting]="true"
+    [useIcons]="true"    
+  ></dxo-editing>
+  
+  <dxi-column
+    dataField="name"
+    [width]="300"
+    caption="Nome">
+  </dxi-column>
+  <dxi-column
+    dataField="description"
+    [width]="300"
+    caption="Descrição">
+  </dxi-column>
+  <dxi-column
+    dataField="price"
+    caption="Preço">
+  </dxi-column>
+  <dxi-column type="buttons" [width]="110">
+    <dxi-button name="delete"></dxi-button>
+  </dxi-column>
+  <dxo-summary>
+    <dxi-total-item
+    displayFormat="Total a pagar: {0}"
+    column="price"
+    summaryType="sum"
+    valueFormat="currency"
+    
+  >
+  </dxi-total-item>
+  </dxo-summary>
+</dx-data-grid>
+
+<div style="display: flex; justify-content: center; padding-top: 10px;">
+  <dx-button
+  stylingMode="contained"
+  text="Contained"
+  type="default"
+  [width]="300"
+  (onClick)="createOrder()"
+  >
+  Finalizar compra
+  </dx-button>
+</div>
