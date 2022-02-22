@@ -5,7 +5,7 @@ Web site construido com Angular, um pequeno carrinho de compras de quadrinhos, u
 
 Stack do projeto
 
-##Dependências do projeto
+## Dependências do projeto
 1. Instalar Node.js
 [Baixar Node.js](https://nodejs.org/en/download/)
 
