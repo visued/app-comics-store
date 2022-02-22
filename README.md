@@ -13,7 +13,7 @@ Stack do projeto Angular 13
 [Começando com Angular](https://angular.io/start)
 
 
-## Iniciar
+## Iniciando
 1. Efetue o clone do projeto
 ```
 git clone https://github.com/visued/app-comics-store.git
