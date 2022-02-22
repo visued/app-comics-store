@@ -1,4 +1,4 @@
-# AppComicsStore
+# Frontend Comic Store
 Web site construido com Angular, um pequeno carrinho de compras de quadrinhos, utilizando a API da Marvel.
 
 ![FrontEnd](frontend.PNG?raw=true "FrontEnd")
