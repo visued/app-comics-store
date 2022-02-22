@@ -3,7 +3,7 @@ Web site construido com Angular, um pequeno carrinho de compras de quadrinhos, u
 
 ![FrontEnd](frontend.PNG?raw=true "FrontEnd")
 
-Stack do projeto
+Stack do projeto Angular 13
 
 ## Dependências do projeto
 1. Instalar Node.js
