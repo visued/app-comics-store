@@ -30,7 +30,7 @@ npm install
 ```
 npm install
 ```
-4. Altere o arquivo environment.prod.ts que está presente no diretório adicionando sua chave privada e sua chave publica, substituindo os textos <privateKey> e <publicKey>.
+4. Altere o arquivo environment.ts que está presente no diretório adicionando sua chave privada e sua chave publica, substituindo os textos <privateKey> e <publicKey>.
 ```
 app-comics-store/src/environments
 ``` 
